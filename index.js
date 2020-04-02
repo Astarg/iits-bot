@@ -1,11 +1,11 @@
 var SlackBot = require('slackbots');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
 
-dotenv.config()
-const envKey = process.env.BOT_TOKEN;
+dotenv.config();
+
 // create a bot
 var bot = new SlackBot({
-    token: envKey, // Add a bot https://my.slack.com/services/new/bot and put the token 
+    token: process.env.BOT_TOKEN, // Add a bot https://my.slack.com/services/new/bot and put the token 
     name: 'Der Wendler'
 });
  
