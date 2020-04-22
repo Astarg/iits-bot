@@ -37,7 +37,7 @@ bot.on("message", msg => {
 		
 		if(msg.text.includes("Sentry") )
 		{
-
+                  
 			  bot.getUsers().then(function(data){
 				   
 				   console.dir(data);
@@ -48,7 +48,7 @@ bot.on("message", msg => {
 				       console.log(rnd);
 					   var user = teamList[rnd].name;
 					   console.log(user);
-					   bot.postMessage(msg.user, user , { as_user: true })
+					   bot.postMessageToChannel("dev-team", user , { as_user: true })
 				   
 			  });
 			 
@@ -74,8 +74,8 @@ bot.on("message", msg => {
 
 
 function postToUserWithImage(message, picUrl) {
-    bot.postMessage(
-        message.user,
+    bot.postMessageToChannel(
+        "#dev-team",
         'Egal!',
         params = {
 			"as_user":true,
