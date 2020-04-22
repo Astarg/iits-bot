@@ -43,10 +43,13 @@ bot.on("message", msg => {
 				   console.dir(data);
 				   var rnd = Math.floor(Math.random()*data.members.length);
 				   console.log(rnd);
-				   var user = data.members[rnd].name;
-				   console.log(user);
-				   bot.postMessage(msg.user, user , { as_user: true })
-				  
+				   
+				   if(!data.members[rnd].name.includes("Christoph") || !data.members[rnd].name.includes("Andreas") || !data.members[rnd].name.includes("Matthias") || !data.members[rnd].name.includes("Sascha"))
+				   {
+					   var user = data.members[rnd].name;
+					   console.log(user);
+					   bot.postMessage(msg.user, user , { as_user: true })
+				   }
 			  });
 			 
 		}
