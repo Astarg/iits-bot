@@ -43,14 +43,10 @@ bot.on("message", msg => {
 				   console.dir(data);
 	
 				   
-				   while(!data.members[rnd].name.includes("Christoph") || !data.members[rnd].name.includes("Andreas") || !data.members[rnd].name.includes("Matthias") || !data.members[rnd].name.includes("Sascha"))
-				   {
+			var teamList = ["marvin.jennrich","victor.getz","georg.braunbeck","soeren.schellhoff","robin.bially","bernhard.kern","alexis.hildebrandt"]
 					   var rnd = Math.floor(Math.random()*data.members.length);
 				       console.log(rnd);
-					   
-				   }
-				   
-					   var user = data.members[rnd].name;
+					   var user = teamList[rnd].name;
 					   console.log(user);
 					   bot.postMessage(msg.user, user , { as_user: true })
 				   
