@@ -32,7 +32,7 @@ bot.on('start', function() {
 bot.on("message", msg => {
   switch (msg.type) {
   case "message":
-  //  if (msg.channel[0] === "D" && msg.bot_id === undefined) {
+    if (msg.bot_id === undefined) {
 		
 		
 		if(msg.text.includes("Sentry") )
@@ -75,7 +75,7 @@ bot.on("message", msg => {
 
 function postToUserWithImage(message, picUrl) {
     bot.postMessageToChannel(
-        "dev-team",
+        "test",
         'Egal!',
         params = {
 			"as_user":true,
