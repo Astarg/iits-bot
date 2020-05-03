@@ -48,7 +48,7 @@ bot.on("message", msg => {
 				       console.log(rnd);
 					   var user = teamList[rnd];
 					   console.log(user);
-					   bot.postMessageToChannel("dev-team", user , { })
+					   bot.postMessageToChannel("test", user , { as_user:true})
 				   
 			  });
 			 
