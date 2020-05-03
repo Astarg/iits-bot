@@ -32,7 +32,7 @@ bot.on('start', function() {
 bot.on("message", msg => {
   switch (msg.type) {
   case "message":
-    if (msg.channel[0] === "D" && msg.bot_id === undefined) {
+  //  if (msg.channel[0] === "D" && msg.bot_id === undefined) {
 		
 		
 		if(msg.text.includes("Sentry") )
@@ -44,11 +44,11 @@ bot.on("message", msg => {
 	
 				   
 			var teamList = ["marvin.jennrich","victor.getz","georg.braunbeck","soeren.schellhoff","robin.bially","bernhard.kern","alexis.hildebrandt"]
-					   var rnd = Math.floor(Math.random()*data.members.length);
+					   var rnd = Math.floor(Math.random()*teamList.length);
 				       console.log(rnd);
-					   var user = teamList[rnd].name;
+					   var user = teamList[rnd];
 					   console.log(user);
-					   bot.postMessageToChannel("dev-team", user , { as_user: true })
+					   bot.postMessageToChannel("dev-team", user , { })
 				   
 			  });
 			 
@@ -67,7 +67,7 @@ bot.on("message", msg => {
 		}
 		
     
-    }
+    
     break
   }
 });
