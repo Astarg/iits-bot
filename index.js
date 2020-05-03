@@ -1,6 +1,6 @@
 var SlackBot = require('slackbots');
 const dotenv = require('dotenv');
-import express from 'express'; 
+const express = require('express'); 
 
 dotenv.config();
 
