@@ -1,10 +1,12 @@
 var SlackBot = require('slackbots');
 const dotenv = require('dotenv');
-const express = require('express'); 
+var express = require('express'); 
+var cors = require('cors');
 
 dotenv.config();
 
-const app = express();
+var app = express();
+app.use(cors());
 
 app.get('/sentry', (req, res) => {
 	
