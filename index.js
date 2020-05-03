@@ -75,7 +75,7 @@ bot.on("message", msg => {
 
 function postToUserWithImage(message, picUrl) {
     bot.postMessageToChannel(
-        "#dev-team",
+        "dev-team",
         'Egal!',
         params = {
 			"as_user":true,
