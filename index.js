@@ -1,7 +1,21 @@
 var SlackBot = require('slackbots');
 const dotenv = require('dotenv');
+import express from 'express'; 
 
 dotenv.config();
+
+const app = express();
+
+app.get('/sentry', (req, res) => {
+	
+	getSentryMan();
+  return res.send('Received a GET HTTP method');
+});
+
+app.listen(process.env.PORT, () =>
+  console.log(`Example app listening on port ${process.env.PORT}!`),
+);
+
 
 // create a bot
 var bot = new SlackBot({
@@ -38,19 +52,7 @@ bot.on("message", msg => {
 		if(msg.text.includes("Sentry") )
 		{
                   
-			  bot.getUsers().then(function(data){
-				   
-				   console.dir(data);
-	
-				   
-			var teamList = ["marvin.jennrich","victor.getz","georg.braunbeck","soeren.schellhoff","robin.bially","bernhard.kern","alexis.hildebrandt"]
-					   var rnd = Math.floor(Math.random()*teamList.length);
-				       console.log(rnd);
-					   var user = teamList[rnd];
-					   console.log(user);
-					   bot.postMessageToChannel("test", user , { as_user:true})
-				   
-			  });
+			  getSentryMan();
 			 
 		}
 		
@@ -89,4 +91,24 @@ function postToUserWithImage(message, picUrl) {
                 ]
         }
     )
+}
+
+
+function getSentryMan()
+{
+	
+	bot.getUsers().then(function(data){
+				   
+				   console.dir(data);
+	
+				   
+			var teamList = ["ilia.barancic","jesse.moares","marvin.jennrich","victor.getz","georg.braunbeck","soeren.schellhoff","robin.bially","bernhard.kern","alexis.hildebrandt","robin.schrage"]
+					   var rnd = Math.floor(Math.random()*teamList.length);
+				       console.log(rnd);
+					   var user = teamList[rnd];
+					   console.log(user);
+					   bot.postMessageToChannel("test", user , { as_user:true})
+				   
+			  });
+	
 }
