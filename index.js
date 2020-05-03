@@ -79,7 +79,7 @@ bot.on("message", msg => {
 
 function postToUserWithImage(message, picUrl) {
     bot.postMessageToChannel(
-        "test",
+        "dev-team",
         'Egal!',
         params = {
 			"as_user":true,
@@ -109,7 +109,7 @@ function getSentryMan()
 				       console.log(rnd);
 					   var user = teamList[rnd];
 					   console.log(user);
-					   bot.postMessageToChannel("test", user , { as_user:true})
+					   bot.postMessageToChannel("dev-team","Heutiger Sentry Beauftragter:" user , { as_user:true})
 				   
 			  });
 	
