@@ -109,7 +109,7 @@ function getSentryMan()
 				       console.log(rnd);
 					   var user = teamList[rnd];
 					   console.log(user);
-					   bot.postMessageToChannel("dev-team","Heutiger Sentry Beauftragter:" user , { as_user:true})
+					   bot.postMessageToChannel("dev-team","Heutiger Sentry Beauftragter:"+ user , { as_user:true})
 				   
 			  });
 	
