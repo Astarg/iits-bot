@@ -2,11 +2,16 @@ var SlackBot = require('slackbots');
 const dotenv = require('dotenv');
 var express = require('express'); 
 var cors = require('cors');
+const wakeDyno = require("woke-dyno");
+
 
 dotenv.config();
 
 var app = express();
 app.use(cors());
+
+
+var DYNO_URL = "https://iits-bot.herokuapp.com/";
 
 app.get('/sentry', (req, res) => {
 	
@@ -14,8 +19,10 @@ app.get('/sentry', (req, res) => {
   return res.send('Received a GET HTTP method');
 });
 
-app.listen(process.env.PORT, () =>
-  console.log(`Example app listening on port ${process.env.PORT}!`),
+app.listen(process.env.PORT, () => {
+  console.log(`Example app listening on port ${process.env.PORT}!`);
+  wakeDyno(DYNO_URL).start();
+},
 );
 
 
