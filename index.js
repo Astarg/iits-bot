@@ -87,6 +87,19 @@ bot.on("message", msg => {
 			 
 		}
 		
+	    if(msg.text.includes("Danke") )
+		{
+
+			  bot.getUsers().then(function(data){
+				   
+
+				   postToUserWithImage(msg,"https://gph.is/1kr7Lt3");
+				  
+			  });
+			 
+		}
+		
+		
     
     }
     break
