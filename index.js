@@ -1,6 +1,6 @@
 var SlackBot = require('slackbots');
 const dotenv = require('dotenv');
-var express = require('express'),
+var express = require('express')
   , routes  = require('./routes')
   , user    = require('./routes/user')
   , path    = require('path');
@@ -14,24 +14,25 @@ dotenv.config();
 var app = express();
 app.set('port', process.env.PORT || 3000);
 app.use(cors());
-app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/users', user.list); 
+//app.get('/users', user.list); 
 
 var DYNO_URL = "https://iits-bot.herokuapp.com/";
 
-app.get('/sentry', (req, res) => {
-	
-	getSentryMan();
-  return res.send('Received a GET HTTP method');
-});
 
 
 db.sequelize.sync().then(function() {
   http.createServer(app).listen(app.get('port'), function(){
     console.log('Express server listening on port ' + app.get('port'));
   });
+});
+
+
+app.get('/sentry', (req, res) => {
+	
+	getSentryMan();
+  return res.send('Received a GET HTTP method');
 });
 
 
