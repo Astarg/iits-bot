@@ -93,7 +93,7 @@ bot.on("message", msg => {
 			  bot.getUsers().then(function(data){
 				   
 
-				   postToUserWithImage(msg,"https://gph.is/1kr7Lt3");
+				   postToUserWithImage(msg,"https://media.giphy.com/media/eyGs1FYIYgka4/giphy.gif");
 				  
 			  });
 			 
