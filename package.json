@@ -15,7 +15,7 @@
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "pg": "^8.2.1",
-    "sequelize": "^5.21.10",
+    "sequelize": "^6.28.2",
     "sequelize-cli": "^5.5.1",
     "slackbots": "^1.2.0",
     "woke-dyno": "0.0.4"
